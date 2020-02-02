@@ -1,0 +1,1 @@
+# lena-gutenberg-fullsite-theme
