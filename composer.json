@@ -1,0 +1,19 @@
+{
+    "name": "web-dev-media/lena-gutenberg-theme",
+    "description": "Lena is a modern gutenberg fullsite-editing theme it is using the new WordPress block templating system.",
+    "keywords": [
+        "wordpress",
+        "theme"
+    ],
+    "license": "GPL-3.0+",
+    "type": "wordpress",
+    "homepage": "https://github.com/web-dev-media/lena-gutenberg-fullsite-theme",
+    "authors": [
+        {
+            "name": "web dev media UG",
+            "homepage": "http://wb-dev-media.de",
+            "email": "info@web-dev-media.de",
+            "role": "Developer, author"
+        }
+    ]
+}
