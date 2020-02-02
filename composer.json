@@ -5,8 +5,8 @@
         "wordpress",
         "theme"
     ],
-    "license": "GPL-3.0+",
-    "type": "wordpress",
+    "license": "GPL-3.0+",  
+    "type": "wordpress-theme",
     "homepage": "https://github.com/web-dev-media/lena-gutenberg-fullsite-theme",
     "authors": [
         {
