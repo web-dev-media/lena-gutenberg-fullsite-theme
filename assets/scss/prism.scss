@@ -1,0 +1,130 @@
+$base-font-color: #eceff1;
+$background: #283142;
+$comment-color: #7b8998;
+$punctuation-color: #f8f8f2;
+$property-constant-color: #f92672;
+$boolean-number-color: #ae81ff;
+$string-color: #a6e22e;
+$operator-entity-variable-color: #f8f8f2;
+$values-function-color: #e6db74;
+$keyword-color: #4cd0e0;
+$important-color: #fd971f;
+
+code[class*="language-"],
+pre[class*="language-"],
+pre[class*="wp-block-code"] {
+	color: $base-font-color;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: .8em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.2;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"],
+pre[class*="wp-block-code"] {
+	padding: 1em;
+	margin: .5em auto;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"],
+pre[class*="wp-block-code"] {
+	background: $background;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: $comment-color;
+}
+
+.token.punctuation {
+	color: $punctuation-color;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: $property-constant-color;
+}
+
+.token.boolean,
+.token.number {
+	color: $boolean-number-color;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: $string-color;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: $operator-entity-variable-color;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: $values-function-color;
+}
+
+.token.keyword {
+	color: $keyword-color;
+}
+
+.token.regex,
+.token.important {
+	color: $important-color;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
