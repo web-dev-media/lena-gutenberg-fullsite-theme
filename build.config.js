@@ -10,8 +10,8 @@ const config = () => {
         { source: './functions.php', destination: './'+ this.packageBase + tmpFolder },
         { source: './style.css', destination: './'+ this.packageBase + tmpFolder },
         { source: './screenshot.png', destination: './'+ this.packageBase + tmpFolder },
-        { source: './inc/', destination: './'+ this.packageBase + tmpFolder + '/inc' },
-        { source: './templates/', destination: './'+ this.packageBase + tmpFolder + '/templates' }
+        { source: './block-template-parts/', destination: './'+ this.packageBase + tmpFolder + '/block-template-parts' },
+        { source: './block-templates/', destination: './'+ this.packageBase + tmpFolder + '/block-templates' }
     ];
 
     if(moduleFiles.length > 0){
