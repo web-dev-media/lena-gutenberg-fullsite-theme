@@ -33,17 +33,31 @@ if ( ! function_exists( 'lena_theme_support' ) ) :
 endif;
 
 /**
- * Register and Enqueue Styles.
+ * load lena theme assets like styles & scripts
  */
-function lena_register_styles() {
+function lena_enqueue_assets() {
 
-	$theme_version = wp_get_theme()->get( 'Version' );
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 
-	wp_enqueue_style( 'lena-style', get_stylesheet_uri(), array(), $theme_version );
+    $assetsPath = '/assets/dist/';
 
+    foreach (glob(get_stylesheet_directory() . $assetsPath . '*/*.bundle.*.js') as $i => $assetFile) {
+
+        $assetPathInfo   = pathinfo($assetFile);
+        $assetFile       = basename($assetFile);
+        $version         = basename($assetPathInfo['dirname']);
+        $assetFileHandle = explode('.', $assetFile)[0];
+
+        if ($i === 0) {
+            $assetsHandles = 'js-webpack-' . $assetFileHandle;
+        }
+
+        $file = $assetsPath . $version . '/' . $assetFile;
+        wp_enqueue_script('js-webpack-' . $assetFileHandle, get_stylesheet_directory_uri() . $file, ($i > 0 ? $assetsHandles : NULL), NULL, FALSE);
+    }
 }
 
-add_action( 'wp_enqueue_scripts', 'lena_register_styles' );
+add_action('wp_enqueue_scripts', 'lena_enqueue_assets');
 
 
 /**
