@@ -17,12 +17,12 @@ module.exports = async (env, argv) => {
   const packageBase = 'build';
 
   let devToolMode = 'hidden-source-map';
-  let host = 'http://gutenberg.dev/';
+  let host = 'http://lena.dev/';
   let StyleInjectMode = 'styleTag';
   let themeName = '';
 
   if (mode === 'development') {
-    host = 'http://gutenberg.dev/';
+    host = 'http://lena.dev/';
     devToolMode = 'source-map';
     StyleInjectMode = 'styleTag';
   }

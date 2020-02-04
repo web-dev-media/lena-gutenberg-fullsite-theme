@@ -1,12 +1,8 @@
 document.addEventListener( 'DOMContentLoaded', function( event ) {
-	import(/* webpackChunkName: "styles-scss" */'../scss/font.scss');
-	import(/* webpackChunkName: "styles-scss" */'../scss/base.scss');
+	import(/* webpackChunkName: "base-styles" */'../scss/core/base.scss');
 
-	let heighlighter = document.querySelectorAll( "pre code" );
-
-	window.observeElements( heighlighter, (codeBLock) => {
-		import(/* webpackChunkName: "prism-scss" */'../scss/prism.scss');
-			const Prism = require('prismjs');
-			codeBLock.innerHTML = Prism.highlight(codeBLock.innerText, Prism.languages.javascript, 'javascript');
+	// observe default headlines
+	window.observeElements( document.querySelectorAll( "h1,h2,h3,h4,h5,h6" ), () => {
+		import(/* webpackChunkName: "base-styles-headlines" */'../scss/core/headlines.scss');
 	}, {loop: false} );
 });
