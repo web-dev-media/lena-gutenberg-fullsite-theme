@@ -45,11 +45,6 @@ td {
 	text-align: inherit;
 }
 
-blockquote::before,
-blockquote::after {
-	content: "";
-}
-
 html {
 	font-size: 62.5%; /* 1rem = 10px */
 }
@@ -61,8 +56,4 @@ html {
 	-webkit-font-smoothing: antialiased;
 	word-break: break-word;
 	word-wrap: break-word;
-}
-
-.site-header{
-	margin-bottom: 200px
 }
