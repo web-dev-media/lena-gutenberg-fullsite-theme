@@ -1,4 +1,6 @@
 <?php
+// load gutenberg demo page
+require_once get_template_directory() . '/demo.php';
 
 if ( ! function_exists( 'lena_theme_support' ) ) :
     function lena_theme_support()  {
