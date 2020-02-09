@@ -1,0 +1,19 @@
+@charset 'UTF-8';
+
+/* core */
+@import 'core/reset';
+@import 'mixins/colors';
+
+/**
+  This Loop will generate the various .text- and .background- classes
+  based on the $colors map above.
+*/
+@each $colorName, $color, $color-light in $colors {
+	.text-#{$colorName} {
+		color: $color;
+	}
+
+	.background-#{$colorName} {
+		background-color: $color-light;
+	}
+}

@@ -1,3 +1,7 @@
+@import '../core/font';
+@import '../mixins/colors';
+
+$font-color: $primary !default;
 
 h1,
 h2,
@@ -6,12 +10,11 @@ h4,
 h5,
 h6,
 .faux-heading {
-	font-feature-settings: "lnum";
-	font-variant-numeric: lining-nums;
+	font-family: $header-font, cursive;
 	font-weight: 700;
 	letter-spacing: -0.0415625em;
 	line-height: 1.25;
-	margin: 3.5rem 0 2rem;
+	margin: 3.5rem 0 .9rem;
 }
 
 h1,
