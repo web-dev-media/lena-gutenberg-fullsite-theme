@@ -17,12 +17,12 @@ module.exports = async (env, argv) => {
   const packageBase = 'build';
 
   let devToolMode = 'hidden-source-map';
-  let host = 'http://lena.dev/';
+  let host = 'http://theme.lena/';
   let StyleInjectMode = 'styleTag';
   let themeName = '';
 
   if (mode === 'development') {
-    host = 'http://lena.dev/';
+    host = 'http://theme.lena/';
     devToolMode = 'source-map';
     StyleInjectMode = 'styleTag';
   }
@@ -89,6 +89,25 @@ module.exports = async (env, argv) => {
     optimization: {
       minimize: true,
       minimizer: [new TerserPlugin()],
+      /* runtimeChunk: 'single',
+						 splitChunks: {
+							 chunks            : 'all',
+							 maxInitialRequests: Infinity,
+							 minSize           : 0,
+							 cacheGroups       : {
+								 vendor: {
+									 test: /[\\/]node_modules[\\/]/,
+									 name( module ) {
+										 // get the name. E.g. node_modules/packageName/not/this/part.js
+										 // or node_modules/packageName
+										 const packageName = module.context.match( /[\\/]node_modules[\\/](.*?)([\\/]|$)/ )[ 1 ];
+
+										 // npm package names are URL-safe, but some servers don't like @ symbols
+										 return `npm.${packageName.replace( '@', '' )}`;
+									 }
+								 }
+							 }
+						 }*/
     },
     watchOptions: {
       ignored: /node_modules/,
