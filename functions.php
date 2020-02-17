@@ -1,9 +1,10 @@
 <?php
+namespace theme_lena;
+
 // load gutenberg demo page
 require_once get_template_directory() . '/demo.php';
 
-if ( ! function_exists( 'lena_theme_support' ) ) :
-    function lena_theme_support()  {
+    function theme_support()  {
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -31,13 +32,12 @@ if ( ! function_exists( 'lena_theme_support' ) ) :
 
 
     }
-    add_action( 'after_setup_theme', 'lena_theme_support' );
-endif;
+    add_action( 'after_setup_theme', __NAMESPACE__ . '\theme_support' );
 
 /**
  * load lena theme assets like styles & scripts
  */
-function lena_enqueue_assets() {
+function enqueue_assets() {
 
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 
@@ -59,7 +59,8 @@ function lena_enqueue_assets() {
     }
 }
 
-add_action('wp_enqueue_scripts', 'lena_enqueue_assets');
+add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets');
+add_action('admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets');
 
 
 /**
@@ -67,7 +68,7 @@ add_action('wp_enqueue_scripts', 'lena_enqueue_assets');
  * Add custom colors to the block editor.
  */
 
-function lena_block_editor_settings() {
+function block_editor_settings() {
 
 	// Editor Color Palette
 	add_theme_support( 'editor-color-palette', array(
@@ -93,4 +94,4 @@ function lena_block_editor_settings() {
 		),
 	) );
 }
-add_action( 'after_setup_theme', 'lena_block_editor_settings' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\block_editor_settings' );

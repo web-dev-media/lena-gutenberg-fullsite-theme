@@ -89,6 +89,8 @@
 	<!-- /wp:column --></div>
 <!-- /wp:columns -->
 
+<div class="editor-post-title">asdas</div>
+
 <!-- wp:paragraph -->
 <p><?php _e( 'The goal of this new editor is to make adding rich content to WordPress simple and enjoyable. This whole post is composed of <em>pieces of content</em>—somewhat similar to LEGO bricks—that you can move around and interact with. Move your cursor around and you&#8217;ll notice the different blocks light up with outlines and arrows. Press the arrows to reposition blocks quickly, without fearing about losing things in the process of copying and pasting.', 'gutenberg' ); ?></p>
 <!-- /wp:paragraph -->

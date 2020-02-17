@@ -17,12 +17,10 @@ module.exports = async (env, argv) => {
   const packageBase = 'build';
 
   let devToolMode = 'hidden-source-map';
-  let host = 'http://theme.lena/';
   let StyleInjectMode = 'styleTag';
   let themeName = '';
 
   if (mode === 'development') {
-    host = 'http://theme.lena/';
     devToolMode = 'source-map';
     StyleInjectMode = 'styleTag';
   }
@@ -39,7 +37,6 @@ module.exports = async (env, argv) => {
   const logOutput = `
         mode: ${mode}
         devtool: ${devToolMode},
-        host: ${host},
         version: ${version},
         StyleInjectMode: ${StyleInjectMode}`;
 
@@ -73,7 +70,8 @@ module.exports = async (env, argv) => {
     }
     themeName = arrayPath[0];
 
-    return host + arrayPath.reverse().join('\/') + '/assets/dist/' + version + '/';
+    //return host + arrayPath.reverse().join('\/') + '/assets/dist/' + version + '/';
+    return arrayPath.reverse().join('\/') + '/assets/dist/' + version + '/';
   };
 
   const config = {
@@ -88,26 +86,7 @@ module.exports = async (env, argv) => {
     },
     optimization: {
       minimize: true,
-      minimizer: [new TerserPlugin()],
-      /* runtimeChunk: 'single',
-						 splitChunks: {
-							 chunks            : 'all',
-							 maxInitialRequests: Infinity,
-							 minSize           : 0,
-							 cacheGroups       : {
-								 vendor: {
-									 test: /[\\/]node_modules[\\/]/,
-									 name( module ) {
-										 // get the name. E.g. node_modules/packageName/not/this/part.js
-										 // or node_modules/packageName
-										 const packageName = module.context.match( /[\\/]node_modules[\\/](.*?)([\\/]|$)/ )[ 1 ];
-
-										 // npm package names are URL-safe, but some servers don't like @ symbols
-										 return `npm.${packageName.replace( '@', '' )}`;
-									 }
-								 }
-							 }
-						 }*/
+      minimizer: [new TerserPlugin()]
     },
     watchOptions: {
       ignored: /node_modules/,
@@ -124,6 +103,12 @@ module.exports = async (env, argv) => {
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
           loader: 'url-loader?limit=100000',
+        },
+        {
+          test: /\.(png|svg|jpg|gif)$/,
+          use: [
+            'file-loader',
+          ],
         },
         {
           test: /\.s[c|a]ss$/,
