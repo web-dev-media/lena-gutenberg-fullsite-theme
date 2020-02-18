@@ -2,8 +2,5 @@
 @import "font-settings";
 
 body.wp-admin {
-	&.block-editor-page {
-		margin-top: 25px;
-		background-color: red;
-	}
+	&.block-editor-page {}
 }

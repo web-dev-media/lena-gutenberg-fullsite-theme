@@ -9,6 +9,7 @@ const log = require('signale');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const hash = require( 'object-hash' );
 const fs = require('fs');
+require('dotenv').config();
 
 module.exports = async (env, argv) => {
   const mode = argv.mode || 'development';
@@ -17,10 +18,12 @@ module.exports = async (env, argv) => {
   const packageBase = 'build';
 
   let devToolMode = 'hidden-source-map';
+  let host = process.env.HOST_PRO;
   let StyleInjectMode = 'styleTag';
   let themeName = '';
 
   if (mode === 'development') {
+    host = process.env.HOST_DEV;
     devToolMode = 'source-map';
     StyleInjectMode = 'styleTag';
   }
@@ -37,6 +40,7 @@ module.exports = async (env, argv) => {
   const logOutput = `
         mode: ${mode}
         devtool: ${devToolMode},
+        host: ${host},
         version: ${version},
         StyleInjectMode: ${StyleInjectMode}`;
 
@@ -70,8 +74,7 @@ module.exports = async (env, argv) => {
     }
     themeName = arrayPath[0];
 
-    //return host + arrayPath.reverse().join('\/') + '/assets/dist/' + version + '/';
-    return arrayPath.reverse().join('\/') + '/assets/dist/' + version + '/';
+    return host + arrayPath.reverse().join('\/') + '/assets/dist/' + version + '/';
   };
 
   const config = {

@@ -38,7 +38,6 @@ require_once get_template_directory() . '/demo.php';
  * load lena theme assets like styles & scripts
  */
 function enqueue_assets() {
-
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 
     $assetsPath = '/assets/dist/';
