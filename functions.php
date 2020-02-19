@@ -30,6 +30,34 @@ require_once get_template_directory() . '/demo.php';
 		// Alignwide and alignfull classes in the block editor
 		add_theme_support( 'align-wide' );
 
+		// set fontsizes
+	    add_theme_support( 'editor-font-sizes', array(
+		    array(
+			    'name'      => __( 'small', __NAMESPACE__ ),
+			    'shortName' => __( 'S', __NAMESPACE__ ),
+			    'size'      => 12,
+			    'slug'      => 'small'
+		    ),
+		    array(
+			    'name'      => __( 'regular', __NAMESPACE__ ),
+			    'shortName' => __( 'M', __NAMESPACE__ ),
+			    'size'      => 16,
+			    'slug'      => 'regular'
+		    ),
+		    array(
+			    'name'      => __( 'large', __NAMESPACE__ ),
+			    'shortName' => __( 'L', __NAMESPACE__ ),
+			    'size'      => 20,
+			    'slug'      => 'large'
+		    ),
+		    array(
+			    'name'      => __( 'larger', __NAMESPACE__ ),
+			    'shortName' => __( 'XL', __NAMESPACE__ ),
+			    'size'      => 24,
+			    'slug'      => 'larger'
+		    )
+	    ) );
+
 
     }
     add_action( 'after_setup_theme', __NAMESPACE__ . '\theme_support' );
