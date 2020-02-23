@@ -35,25 +35,25 @@ require_once get_template_directory() . '/demo.php';
 		    array(
 			    'name'      => __( 'small', __NAMESPACE__ ),
 			    'shortName' => __( 'S', __NAMESPACE__ ),
-			    'size'      => 12,
+			    'size'      => 14,
 			    'slug'      => 'small'
 		    ),
 		    array(
 			    'name'      => __( 'regular', __NAMESPACE__ ),
 			    'shortName' => __( 'M', __NAMESPACE__ ),
-			    'size'      => 16,
+			    'size'      => 18,
 			    'slug'      => 'regular'
 		    ),
 		    array(
 			    'name'      => __( 'large', __NAMESPACE__ ),
 			    'shortName' => __( 'L', __NAMESPACE__ ),
-			    'size'      => 20,
+			    'size'      => 22,
 			    'slug'      => 'large'
 		    ),
 		    array(
 			    'name'      => __( 'larger', __NAMESPACE__ ),
 			    'shortName' => __( 'XL', __NAMESPACE__ ),
-			    'size'      => 24,
+			    'size'      => 26,
 			    'slug'      => 'larger'
 		    )
 	    ) );
@@ -87,8 +87,7 @@ function enqueue_assets() {
 }
 
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets');
-add_action('admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets');
-
+add_action('enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_assets');
 
 /**
  * Block Editor Settings.

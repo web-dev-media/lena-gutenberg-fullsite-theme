@@ -1,6 +1,20 @@
-@import "components/font-faces";
 @import "font-settings";
 
 body.wp-admin {
-	&.block-editor-page {}
+	&.block-editor-page {
+		background: url("../img/kidsBg.svg");
+	}
+	.editor-post-title__block .editor-post-title__input,
+	.edit-post-visual-editor{
+		font-family: $font-family-headlines;
+	}
+
+	.block-editor-editor-skeleton_{
+		&_header,
+		&_sidebar,
+		&_publish,
+		&_footer{
+			font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+		}
+	}
 }

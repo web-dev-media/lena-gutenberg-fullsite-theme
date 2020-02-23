@@ -5,9 +5,8 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.faux-heading {
-	font-family: $header-font;
+h6 {
+	font-family: $font-family-headlines;
 	font-variant-numeric: lining-nums;
 	font-weight: 700;
 	letter-spacing: -0.0415625em;
@@ -15,36 +14,30 @@ h6,
 	margin: 3.5rem 0 2rem;
 }
 
-h1,
-.heading-size-1 {
-	font-size: 3.6rem;
+h1 {
+	font-size: $font-size-huge;
 	font-weight: 800;
 	line-height: 1.138888889;
 }
 
-h2,
-.heading-size-2 {
-	font-size: 3.2rem;
+h2 {
+	font-size: $font-size-large;
 }
 
-h3,
-.heading-size-3 {
-	font-size: 2.8rem;
+h3 {
+	font-size: $font-size-medium;
 }
 
-h4,
-.heading-size-4 {
-	font-size: 2.4rem;
+h4 {
+	font-size: $font-size-normal;
 }
 
-h5,
-.heading-size-5 {
-	font-size: 2.1rem;
+h5 {
+	font-size: $font-size-normal;
 }
 
-h6,
-.heading-size-6 {
-	font-size: 1.6rem;
+h6{
+	font-size: $font-size-small;
 	letter-spacing: 0.03125em;
 	text-transform: uppercase;
 }
